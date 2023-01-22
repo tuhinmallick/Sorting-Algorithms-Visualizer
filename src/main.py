@@ -18,7 +18,7 @@ def main():
     alg_iterator = None
 
     timer_delay = time()
-    
+
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -37,7 +37,7 @@ def main():
             display.do_sorting = True
             current_alg = display.algorithmBox.get_active_option()
             display.numBars = int(display.sizeBox.text)
-            numbers = [randint(10, 400) for i in range(display.numBars)] # random list to be sorted
+            numbers = [randint(10, 400) for _ in range(display.numBars)]
             alg_iterator = algorithmsDict[current_alg](numbers, 0, display.numBars-1) # initialize iterator
 
         if display.stopButton.isActive: # stop button clicked
@@ -58,7 +58,7 @@ def main():
                     timer_delay = time()
             except StopIteration:
                 display.do_sorting = False
-        elif display.do_sorting and display.paused: # animation paused
+        elif display.do_sorting: # animation paused
             display.drawInterface(numbers, -1, -1, -1, -1)
         else: # no animation
             a_set = set(range(display.numBars))

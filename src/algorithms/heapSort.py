@@ -26,7 +26,6 @@ def siftDown(array, start, end):
             swap = child + 1
         if swap == root:
             return
-        else:
-            yield array, root, swap, -1, -1
-            array[root], array[swap] = array[swap], array[root]
-            root = swap
+        yield array, root, swap, -1, -1
+        array[root], array[swap] = array[swap], array[root]
+        root = swap

@@ -1,8 +1,8 @@
 def cycleSort(array, *args):
-    for cycle_start in range(0, len(array) - 1):
+    for cycle_start in range(len(array) - 1):
         item = array[cycle_start]
         pos = cycle_start
-        
+
         for i in range(cycle_start + 1, len(array)):
             if array[i] < item:
                 pos += 1

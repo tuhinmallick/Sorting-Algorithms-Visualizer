@@ -1,8 +1,6 @@
 def get_gap(prev_gap) -> int:
     gap = int(prev_gap/1.3)
-    if gap < 1:
-        return 1
-    return gap
+    return max(gap, 1)
     
 
 def combSort(array, *args):
@@ -14,7 +12,7 @@ def combSort(array, *args):
         gap = get_gap(gap)
         swapped = False
 
-        for idx in range(0, size - gap):
+        for idx in range(size - gap):
             yield array, idx, idx+gap, -1, -1
             if array[idx] > array[idx + gap]:
                 array[idx], array[idx + gap] = array[idx + gap], array[idx]

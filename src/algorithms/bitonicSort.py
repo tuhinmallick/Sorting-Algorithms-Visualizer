@@ -28,6 +28,6 @@ def bitonicMerge(array, low, cnt, dire):
 
 def greatestPowerOfTwoLessThan(n):
     k = 1
-    while(k>0 and k<n):
-        k = k<<1
+    while (k>0 and k<n):
+        k <<= 1
     return k>>1

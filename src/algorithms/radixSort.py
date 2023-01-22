@@ -2,10 +2,10 @@ def counting_Sort(array, exp1):
 
     n = len(array)
     output = []
-    for i in range(0,n):
+    for i in range(n):
         output.append(array[i])
     count = [0] * (10)
-    for i in range(0, n):
+    for i in range(n):
         index = (array[i] / exp1)
         count[int(index % 10)] += 1
     for i in range(1, 10):
@@ -18,11 +18,9 @@ def counting_Sort(array, exp1):
         count[int(index % 10)] -= 1
         i -= 1
     i = 0
-    if(array != output):
-        pass
-    else:
+    if array == output:
         return 0
-    for i in range(0, len(array)):
+    for i in range(len(array)):
         array[i] = output[i]
     del(output)
 

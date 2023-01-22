@@ -3,16 +3,12 @@ def binaryinsertionSort(array, *args):
         val = array[i]
         j = binary_search(array, val, 0, i - 1, i)
         yield array, 0, i-1, j, i
-        array[0:len(array)] = array[:j] + [val] + array[j:i] + array[i + 1:]
+        array[:] = array[:j] + [val] + array[j:i] + array[i + 1:]
 
 
 def binary_search(arr, val, start, end, current):
     if start == end:
-        if arr[start] > val:
-            return start
-        else:
-            return start + 1
-
+        return start if arr[start] > val else start + 1
     if start > end:
         return start
 

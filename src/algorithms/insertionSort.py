@@ -1,7 +1,7 @@
 def insertionSort(array, *args):
     mySortedRows = []
     size = len(array)
-    for i in range(0, size):
+    for i in range(size):
         j = i-1
         key = array[i]
         mySortedRows.append(i)        

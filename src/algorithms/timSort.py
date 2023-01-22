@@ -11,11 +11,11 @@ def calculate_min_run(n):
 	return n + last_bit 
 
 def binaryinsertionSort(array, start, end):
-    for i in range(start, end + 1):
-        val = array[i]
-        j   = binary_search(array, val, start, i - 1, i)
-        yield array, start, i-1, j, i
-        array[0: len(array)] = array[: j] + [val] + array[j: i] + array[i + 1:]
+	for i in range(start, end + 1):
+		val = array[i]
+		j   = binary_search(array, val, start, i - 1, i)
+		yield array, start, i-1, j, i
+		array[:] = array[: j] + [val] + array[j: i] + array[i + 1:]
 
 def merge(arr, left, mid, right):
 	left_arr_size  = mid - left + 1
